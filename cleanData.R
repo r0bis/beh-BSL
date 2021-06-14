@@ -1,11 +1,6 @@
 # knitr::opts_knit$set(root.dir = './out/')
 
-# onePerson
-if (props$onePerson=="YES") {
-  onePerson <- TRUE
-  } else {
-    onePerson <- FALSE
-}
+
 
 uuidColumn <- props$uuidColumn
 
@@ -19,8 +14,11 @@ if (is.na(startDT)) {
     stop('Ending date or Time not in the right format in the properties file')  
 }
 
-# remove trailing dot from column names and set date datatype on submitdate
+# remove trailing dot from column names, normalize id column name (on windows 
+# due to charset oddities it is not simply called <id> but rather <ï..id> )
+# and set date datatype on submitdate
 names(initData) <- gsub("\\.$", "", names(initData))
+initData <- initData %>% rename(id = 1) 
 initData <- initData %>% mutate(submitdate = ymd_hms(submitdate))
 initData <- initData %>% mutate(date = as_date(submitdate))
 
@@ -29,8 +27,9 @@ initData <- initData %>% mutate(date = as_date(submitdate))
  initData <- initData %>% 
   filter(!!as.name(uuidColumn) == props$uuid) 
 
- mainData <- initData %>% 
-   select(id,submitdate,matches("^ISQ|^PSQ|^BEQ|^SDQ"))
+# subset to get only id, submitdate and actual survey questions
+mainData <- initData %>% 
+   select(id,submitdate,matches("^ISQ|^PSQ|^BEQ|^SDQ")) 
  
 mainData <- mainData %>% 
   mutate(across(matches("^ISQ|^BEQ"), ~ as.numeric(factor(.,levels = c("not at all","a little","rather","much","very strong"))) -1 ))

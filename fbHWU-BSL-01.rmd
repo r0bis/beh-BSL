@@ -97,7 +97,7 @@ plot.BSL <- ggplot(joinedData, aes(x = submitdate, y = score)) +
 
 ```
 
-The BSL-23 questionnaire is an instrument designed to track main BPD related factors over time. There are 3 scales in BSL-23:
+The BSL-23 questionnaire is an instrument designed to track main BPD related factors over time on _weekly basis_. There are 3 scales in BSL-23:
 
 * **Internal Feeling Level** - characterizes the $\color{violet}{\emph{\text{stress/strain}}}$ level due to the thoughts and feelings characteristic of BPD. Maximal score is **4** and minimal is **0**. Lower score is better; _downward_ trend in the timeline suggests an improvement.
 * **Overall Feeling State** - characterizes the $\textcolor{teal}{\emph{\text{overall personal  feeling  state}}}$ - how you felt overall for the last week. Maximal score is **100** and minimal is **0**. Higher score means feeling better; _upward_ trend in the timeline suggests an improvement.
