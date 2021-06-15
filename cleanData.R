@@ -2,12 +2,12 @@
 
 
 
-uuidColumn <- strtrim(props$uuidColumn)
-uuid <- strtrim(props$uuid)
+uuidColumn <- str_trim(props$uuidColumn)
+uuid <- str_trim(props$uuid)
 
 # date filter variables
 startDT <- ymd_hm(paste(str_trim(props$dateStart), str_trim(props$timeStart)))
-endDT <- ymd_hm(paste(str_trim(props$dateEnd), strtrim(props$timeEnd)))
+endDT <- ymd_hm(paste(str_trim(props$dateEnd), str_trim(props$timeEnd)))
 
 if (is.na(startDT)) {
     stop('Start date or Time not in the right format in the properties file')
