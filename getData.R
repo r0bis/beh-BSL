@@ -4,9 +4,9 @@ props <- read.properties("fbHWU-BSL-01.properties")
 ### Reading in data
 # GET data
 
-options(lime_api = props$limeAPI)
-options(lime_username = props$limeUser)
-options(lime_password = props$limePassword)
+options(lime_api =str_trim(props$limeAPI))
+options(lime_username = str_trim(props$limeUser))
+options(lime_password = str_trim(props$limePassword))
 
 ### Reading in data
 
@@ -20,6 +20,6 @@ if(skey == '') { stop("No connection to database. Is network running OK?")}
 #                          sStatname = "completed_responses"))
 # usrs <- call_limer(method="list_users")
 
-initData <- get_responses(props$limeSurveyNumber)
+initData <- get_responses(str_trim(props$limeSurveyNumber))
 # clear session with limesurvey, do not print output of this (via invisible)
 invisible(release_session_key())

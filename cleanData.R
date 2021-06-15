@@ -2,11 +2,12 @@
 
 
 
-uuidColumn <- props$uuidColumn
+uuidColumn <- strtrim(props$uuidColumn)
+uuid <- strtrim(props$uuid)
 
 # date filter variables
-startDT <- ymd_hm(paste(props$dateStart, props$timeStart))
-endDT <- ymd_hm(paste(props$dateEnd, props$timeEnd))
+startDT <- ymd_hm(paste(str_trim(props$dateStart), str_trim(props$timeStart)))
+endDT <- ymd_hm(paste(str_trim(props$dateEnd), strtrim(props$timeEnd)))
 
 if (is.na(startDT)) {
     stop('Start date or Time not in the right format in the properties file')
@@ -15,7 +16,7 @@ if (is.na(startDT)) {
 }
 
 # remove trailing dot from column names, normalize id column name (on windows 
-# due to charset oddities it is not simply called <id> but rather <ï..id> )
+# due to charset oddities it is not simply called <id> but rather <?..id> )
 # and set date datatype on submitdate
 names(initData) <- gsub("\\.$", "", names(initData))
 initData <- initData %>% rename(id = 1) 
@@ -25,7 +26,7 @@ initData <- initData %>% mutate(date = as_date(submitdate))
 # restrict dataframe
 # need to use !!as.name() construct to refer to column through variable
  initData <- initData %>% 
-  filter(!!as.name(uuidColumn) == props$uuid) 
+  filter(!!as.name(uuidColumn) == uuid) 
 
 # subset to get only id, submitdate and actual survey questions
 mainData <- initData %>% 
