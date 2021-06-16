@@ -14,11 +14,11 @@ The BSL-23 can be used to test the effectiveness of treatments being undertaken 
 
 # Project Structure
 
-Project consists of one main _.Rmarkdown_ script file with extension `.rmd`. There is an identically named file with extension `.properties`. This simple text file contains information such as limesurvey communication parameters and desired uuid. Upon reading this file the main script sets the necessary variables. One does not put sensitive information such as your limesurvey API location or uuid of interest on public server, therefore this file is excluded from here, but full description of file format and parameters will follow below, therefore you can easily creat it yourself.
+Project consists of one main _.Rmarkdown_ script file with extension `.rmd`. There is an identically named file with extension `.properties`. This simple text file contains information such as limesurvey communication parameters and desired `uuid`. Upon reading this file the main script sets the necessary variables. One does not put sensitive information such as your limesurvey API location or `uuid` of interest on public server, therefore this file is excluded from here, but full description of file format and parameters will follow below, therefore you can easily create it yourself.
 
-In order to avoid clutter, the things that you will need to start with - such as loading R libraries, any custom functions and getting/cleaning data are isolated in 4 R scripts with extension `.R`. The main script reads these in at the beginning. An easy workflow on Rstudio is to open the main file in the leftmost pane and keep the other 4 files in the middle pane above your console.
+In order to avoid clutter, the things that you will need to start with - such as loading R libraries, any custom functions and getting/cleaning data are isolated in 4 R scripts with extension `.R`. The main script reads these in at the beginning. An easy work-flow on Rstudio is to open the main file in the leftmost pane and keep the other 4 files in the middle pane above your console.
 
-![Illustration of Workflow on Rstudio](./img/fig-readme-01.png)
+![Illustration of Work-flow on Rstudio](./img/fig-readme-01.png)
 
 Reference materials such as information about BSL-23 etc are kept in `reference` directory. `img` directory contains illustrations to this README and future documentation.
 
