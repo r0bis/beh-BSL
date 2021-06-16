@@ -28,7 +28,7 @@ Reference materials such as information about BSL-23 etc are kept in `reference`
 
 **Naming:** if the main file is called `fbHWU-BSL-01.rmd` then the properties file should be called `fbHWU-BSL-01.properties`. It should be read from the `getData.R` script - the names should match. In later commits I will add automatic filename awareness, however for now - see that the file is correctly referred to in `getData.R` (on line 2).
 
-All lines starting with `#` are comments - and therefor ignored by R. You can copy the below code and create your own `.properties` file; I believe the comments explain everything. The values given here are bogus, you will need to replace what is on the right from equal signs (`=`) with your own parameters.
+All lines starting with `#` are comments - and therefore ignored by R. You can copy the below code and create your own `.properties` file; I believe the comments explain everything. The values given here are bogus, you will need to replace what is on the right from equal signs (`=`) with your own parameters.
 
 > A note for colleagues - when working with (programming) code file (including modifying the properties file) one uses _plain text editors_ such as Notepad, Notepad++, Sublime Text, Atom, Espresso. You will have at least one editor on your computer by default - this should be Notepad on windows or TextEdit on mac. Do not ever attempt to use Word as a text editor; it will end in confusion. To read on plain text one can see [Wikipedia](https://en.wikipedia.org/wiki/Plain_text) or a very brief note on [Computerhope](https://www.computerhope.com/jargon/p/plaintex.htm). _(You can of course open the file in Word (although that is unneeded), just do not try to save the file.)_
  
