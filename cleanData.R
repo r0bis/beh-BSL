@@ -33,5 +33,13 @@ mainData <- initData %>%
    select(id,submitdate,matches("^ISQ|^PSQ|^BEQ|^SDQ")) 
  
 mainData <- mainData %>% 
-  mutate(across(matches("^ISQ|^BEQ"), ~ as.numeric(factor(.,levels = c("not at all","a little","rather","much","very strong"))) -1 ))
+  mutate(across(matches("^ISQ"), ~ as.numeric(factor(.,levels = c("not at all","a little","rather","much","very strong"))) -1 )) %>% 
+  mutate(across(matches("^BEQ"), ~ as.numeric(factor(.,levels = c("not at all","once","2-3 times","4-6 times","daily or more often"))) -1 ))
+
+# original mutate call was:
+# mutate(across(matches("^ISQ|^BEQ"), ~ as.numeric(factor(.,levels = c("not at all","a little","rather","much","very strong"))) -1 ))
+# it was due to putting the same labels in questions about internal state and about behaviour
+# once the labels for behaviour questions were changed in Limesurvey the downloaded data reflected this uniformly
+# a very useful property to know about limesurvey - the answer code is stored 
+# and labels get applied only upon data export
 
