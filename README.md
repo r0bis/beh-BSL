@@ -1,4 +1,9 @@
-# BSL-23 Monitoring via Limesurvey
+# BSL-23 Monitoring for a PD service
+
+|![Scan the QRcode](img/fig-readme-02-testLink.png)|
+|:---:|
+| _Scan with your phone to see how it looks for the patient_ |
+
 
 The **Borderline Symptom List-23** (BSL-23) is a brief, self-report instrument  used to assess the severity of symptoms in BPD. It is the short form of the original 95-item Borderline Symptom List, now known as the BSL-95. 
 
